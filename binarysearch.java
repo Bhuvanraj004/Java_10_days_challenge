@@ -1,18 +1,25 @@
-import java.util.*;
-class binarysearch{
-  public static void main(String args[]){
-    Scanner sc=new Scanner(System.in);
-    int size=sc.nextInt();
-    int arr[]=new int[size];
-    for(int i=0;i<size;i++){
-        arr[i]=sc.nextInt();
-        }
-        int a=sc.nextInt();
-        for(int i=0;i<size;i++){
-            if(arr[i]==a){
-                System.out.println("Element is present at index "+i);
-            break;
+public class binarysearch {
+    public static void main(String[] args) {
+        int[] array = {2, 4, 6, 8, 10, 12, 14}; 
+        int target = 8; 
+        int l = 0; 
+        int h = array.length - 1; 
+        int result = -1; 
+        while (l <= h) {
+            int m = (l + h) / 2; 
+            if (array[m] == target) {
+                result = m;
+                break;
+            } else if (array[m] < target) {
+                l = m + 1; 
+            } else {
+                h = m - 1; 
             }
         }
-  }    
+        if (result != -1) {
+            System.out.println("Element found at index: " + result);
+        } else {
+            System.out.println("Element not found");
+        }
+    }
 }
